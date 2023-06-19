@@ -154,7 +154,7 @@ RTC::ReturnCode_t SFMLJoystick2::onExecute(RTC::UniqueId /*ec_id*/)
   if(m_buttonOutputStyle == "continuous" || buttonStateUpdated) {
     m_buttonsOut.write();
   }
-  
+  if(m_buttons.data[4]==1){
   m_axis.data[0] = sf::Joystick::getAxisPosition(m_id, sf::Joystick::X);
   m_axis.data[1] = sf::Joystick::getAxisPosition(m_id, sf::Joystick::Y);
   m_axis.data[2] = sf::Joystick::getAxisPosition(m_id, sf::Joystick::Z);
@@ -170,7 +170,7 @@ RTC::ReturnCode_t SFMLJoystick2::onExecute(RTC::UniqueId /*ec_id*/)
     m_axis.data[i] = (int)(m_axis.data[i] / 100.0 * m_axis_max);
   }
   m_axisOut.write();
-
+  }
 
   if(m_debug) {
     std::cout << "AXIS:    X,    Y,    Z,    R,    U,    V,  PovX,  PovY, \n";
