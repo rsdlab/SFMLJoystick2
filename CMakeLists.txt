@@ -97,7 +97,7 @@ if (${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
    list(APPEND CMAKE_MODULE_PATH ${SFML_ROOT}/cmake/Modules)
 endif (${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
 
-set(CMAKE_MODULE_PATH "/home/rsdlab/Documents/SFML-2.4.2/share/SFML/cmake/Modules" ${CMAKE_MODULE_PATH})
+set(CMAKE_MODULE_PATH "/usr/share/SFML/cmake/Modules" ${CMAKE_MODULE_PATH})
 
 find_package(SFML 2 COMPONENTS system window)
 
